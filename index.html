@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2-Data Exploration</title>
+
+    <!-- Libraries -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://d3js.org/d3.v4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.js"></script>
+
+    <!-- Custom files -->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- your script file -->
+    <script src="js/main.js"></script>
+</head>
+
+<body class="container">
+    <h1>Global Health Spending</h1>
+    <h4>INFO 474 <br> Assignment A2 <br> Sanchya Mahajan</h4>
+    <p>The following visualization shows how much countries spend on health in different ways in comparison to each other.</p>
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary">
+				<input value="General government expenditure" type="radio" name="options" id="option1" autocomplete="off">General government<br> expenditure
+			</label>
+        <label class="btn btn-primary active">
+                <input value="Per capita government expenditure on health at average exchange rate (US$)" type="radio" name="options" id="option2" autocomplete="off" checked>Per capita government expenditure on<br> health (US$)
+            </label>
+        <label class="btn btn-primary active">
+                <input value="Per capita total expenditure on health at average exchange rate (US$)" type="radio" name="options" id="option3" autocomplete="off" checked>Per capita total expenditure on<br> health (US$)
+            </label>
+        <label class="btn btn-primary active">
+                <input value="Private expenditure on health as percentage of total expenditure on health" type="radio" name="options" id="option4" autocomplete="off" checked>Private expenditure on health as <br>% of total expenditure on health
+            </label>
+        <label class="btn btn-primary active">
+                <input value="Total expenditure on health as percentage of gross domestic product" type="radio" name="options" id="option5" autocomplete="off" checked>Total expenditure on health as<br> % of GDP
+            </label>
+    </div>
+    <div id="vis"></div>
+    <h3>Justification</h3>
+    <p>
+        On your webpage, you must provide a detailed defense of your choice of visual encodings and control features. For your visual layout, describe why it is an optimal choice for expressing your data effectively (~ 1 paragraph). Then, for each controlling element, detail how it enables your user to ask different questions (~1 paragraph). You should include specific examples of insights you discovered through the use of these tools. 
+
+        1) I have always been interested in seeing patterns in how global health spending occurs
+
+    </p>
+</body>
+
+</html>
