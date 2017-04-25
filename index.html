@@ -23,7 +23,15 @@
 <body class="container">
     <h1>Global Health Spending</h1>
     <h4>INFO 474 <br> Assignment A2 <br> Sanchya Mahajan</h4>
-    <p>The following visualization shows how much countries spend on health in different ways in comparison to each other.</p>
+    <p>The following visualization shows how much countries spend on health in different ways in comparison to each other. Click on the buttons below to see health spending based on specific criteria.</p>
+    <h3>Justification</h3>
+    <p> 
+        I have always been interested in seeing patterns in how global health spending occurs comparitively for each country. I had a couple options for which visualization to choose for comparison but realized bar charts and pie charts wouldn't be ideal due to the vast amount of countries I wanted to showcase in the visualization in order to truly show Global Health Spending. It then narrowed down to a bubble chart or tree map because both allowed the visual encoding of multiple data points (and thus many countries) in one area mainly through the use of visual area encoding. I ended up choosing a tree map because it makes it easier to compare trends in proportions to one another for each country. The entire map represents the entire world and each country represents its proportion of health spending in the world in comparison to other countries that make up the world. With this it is easy to see which countries spend the most and least on health. A treemap ended up being the optimal choice for expressing my data effectively.
+    </p>
+    <p>
+        This visualization is controlled through button elements that allow showcasing different types of global health spending including public, private, and total spending for each country. There were more columns in the dataset that could have been showcased by I chose the columns I believed most people would ask questions about such as "Which countries had the highest total expenditure on health as percent of their GDP?" and "Did some countries have low per capita government expenditure on health compared to total expenditure on health per capita?". The first button allows users to ask which governments spend the most in general. The second button allows users to ask and see which country governments spend the most on health per capita. The third button allows users to ask and see which countries have the most and least total expenditure on health per capita. The fourth button allows users to ask and see which countries spend the most and least private expenditure on health as a percent of their total expenditure. The last button allows users to answer the second question I mentioned above, "Which countries had the highest total expenditure on health as percent of their GDP?". All of these buttons allow for easy comparison amongst countries and to compare the expenditures based on certain criteria for a country (through the change in size of country's proportion, through visual area encoding, when a button for certain criteria is pressed). I learned a lot about spending global health spending from this visualization, such as that the per capita total health expenditure causes the most stark differences between countries, with some countries dominating the chart such as Norway and Luxembourg. I also expected the United States to be dominating the chart for most of the criteria but to my surprise it did not as much as I expected. In terms of tools, I discovered that many of the tools in visualization come with a lot of costs and benefits, and thus it can be challenging to choose which tools are the most ideal. I spent such a long time trying to decide which chart type would be ideal as well as which susbsets of data were the most important to show and when.
+
+    </p>
     <div class="btn-group" data-toggle="buttons">
         <label class="btn btn-primary">
 				<input value="General government expenditure" type="radio" name="options" id="option1" autocomplete="off">General government<br> expenditure
@@ -42,13 +50,6 @@
             </label>
     </div>
     <div id="vis"></div>
-    <h3>Justification</h3>
-    <p>
-        On your webpage, you must provide a detailed defense of your choice of visual encodings and control features. For your visual layout, describe why it is an optimal choice for expressing your data effectively (~ 1 paragraph). Then, for each controlling element, detail how it enables your user to ask different questions (~1 paragraph). You should include specific examples of insights you discovered through the use of these tools. 
-
-        1) I have always been interested in seeing patterns in how global health spending occurs
-
-    </p>
 </body>
 
 </html>

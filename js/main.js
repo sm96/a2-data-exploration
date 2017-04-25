@@ -9,16 +9,14 @@ $(function() {
                 bottom: 10,
                 left: 10
             },
-            //diameter = 960,
-            //format = d3.format(",d"),
-            width = 1200,
+
+            width = 1085,
             height = 900,
             drawWidth = width - margin.left - margin.right,
             drawHeight = height - margin.top - margin.bottom,
             measure = 'General government expenditure'; // variable to visualize
 
           
-        // Append a wrapper div for the chart
         var svg = d3.select('#vis')
             .append("div")
             .attr('height', height)
@@ -27,20 +25,17 @@ $(function() {
             .style("top", margin.top + "px");
         
 
-        /* ********************************** Create hierarchical data structure & treemap function  ********************************** */
-
-        // Nest your data *by region* using d3.nest()
         var nestedData = d3.nest()
             .entries(data);
 
-        // Define a hierarchy for your data
+        // Defining a hierarchy for data
         var root = d3.hierarchy({
             values: nestedData
         }, function(d) {
             return d.values;
         })
 
-        // Create a *treemap function* that will compute your layout given your data structure
+        // Creating treemap function to compute data structure layout
 
         var treemap = d3.treemap()
         .size([width,height])
@@ -48,36 +43,25 @@ $(function() {
         .tile(d3.treemapResquarify)
         .padding(0);
 
-        /* ********************************** Create an ordinal color scale  ********************************** */
-
-        // Get list of regions for colors
-        var regions = nestedData.map(function(d) {
-            return d.key;
-        });
-
-        // Set an ordinal scale for colors
+        // Setting ordinal scale for colors
         var colorScale = d3.scaleOrdinal().range(d3.schemeCategory10);
-
-        /* ********************************** Write a function to perform the data-join  ********************************** */
         
 
-        // Write your `draw` function to bind data, and position elements
+        // function to bind data and position elements
         var draw = function() {
-            // Redefine which value you want to visualize in your data by using the `.sum()` method
+            
+            // Redefining value to visualize 
             measure_val = root.sum(function(d) {
                 return +d[measure];
             });
 
-            // (Re)build your treemap data structure by passing your `root` to your `treemap` function
+            // Building treemap
             treemap(root);
 
-            // Bind your data to a selection of elements with class node
-            // The data that you want to join is array of elements returned by `root.leaves()`
-            
-            
+            // Binding data to nodes
             var nodes = svg.selectAll(".node").data(root.leaves());
 
-            // Enter and append elements, then position them using the appropriate *styles*
+            // Entering and appending elements as well as styling them
             nodes.enter()
                 .append("div")
                 .text(function(d) {
@@ -104,15 +88,14 @@ $(function() {
 
         };
 
-        // Call your draw function
         draw();
 
-        // Listen to change events on the input elements
+        // Updating based on button clicked to showcase subset of data
         $("input").on('change', function() {
-            // Set your measure variable to the value (which is used in the draw funciton)
+            //setting measure based on button clicked
             measure = $(this).val();
 
-            // Draw your elements
+            // draw elements
             draw();
         });
     });
